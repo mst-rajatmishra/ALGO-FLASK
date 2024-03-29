@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLAUSTOCK LOGIN</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <form id="loginForm" action="{{ url_for('process_login') }}" method="POST">
+      <h1>BLAUSTOCK LOGIN</h1>
+      {% if error %}
+        <div class="error-message">Invalid username or password. Please try again.</div>
+      {% endif %}
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="button-group">
+        <button type="submit">Login</button>
+        <button type="button" onclick="cancelLogin()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+  <header>
+    <div class="title">BLAUSTOCKS</div>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='logo.JPG') }}" alt="logo">
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#">TRADE</a></li>
+      <li><a href="#">ACCOUNTS</a></li>
+      <li><a href="#">PROFILE</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="container mt-4">
+      <h1>Welcome to the Dashboard!</h1>
+      
+      <!-- Search Bar -->
+      <div class="input-group mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search NSE or NFO instruments">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" onclick="searchInstruments()">Search</button>
+        </div>
+      </div>
+      
+      <!-- Wishlist -->
+      <div id="wishlistContainer">
+        <h2>Wishlist</h2>
+        <ul id="wishlist" class="list-group">
+          <!-- Wishlist items will be dynamically added here -->
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container text-center py-3">
+      <p>&copy; 2024 BLAUPLUG. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='scripts/dashscript.js') }}"></script>
+</body>
+</html>
